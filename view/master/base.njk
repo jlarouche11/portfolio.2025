@@ -8,8 +8,82 @@ title: Jade Larouche
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{ title }}</title>
+
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="theme-color" content="#000000">
+
+	<link rel="stylesheet" type="text/css" href="/ressources/styles/styles.css">
+
+	<link rel="stylesheet" type="text/css" href="/ressources/fonts/icomoon/style.css">
 </head>
 <body>
+	<header class="main-header light-text">
+		<div class="main-header-inner px-sm-2">
+			<div class="container-fluid xxl-container-margins">
+				<div class="row justify-content-between">
+					<div class="col col-lg-auto d-flex align-items-center">
+						<div class="logo">
+							<a href="">
+								<img src="ressources/images/logo.svg" alt="Logo"/>
+							</a>
+						</div>
+					</div>
+					<div class="col col-auto d-none d-lg-block">
+						<nav>
+							<ul>
+								<li class="submenu"><a>Mes réalisations <i class="icon-chevron-down"></i></a>
+									<ul>
+										<li><a href="#">Réalisation 1</a></li>
+									</ul>
+								</li>
+							</ul>
+						</nav>
+					</div>
+					<div class="col-auto d-none d-lg-block">
+						<div class="btns-group d-flex align-items-center">
+							<a href="tel:#" class="btn btn-icon btn-yellow"><i class="icon-phone"></i></a>
+							<a href="mailto:#" class="btn btn-icon btn-pink"><i class="icon-mail"></i></a>
+							<a href="#" class="btn btn-icon btn-github"><i class="icon-github"></i></a>
+							<a href="#" class="btn btn-icon btn-linkedin"><i class="icon-linkedin"></i></a>
+						</div>
+					</div>
+					<div class="col-auto d-lg-none">
+						<div class="nav-btn">
+							<div class="toggle-menu">
+								<span class="line line-1"></span>
+								<span class="line line-2"></span>
+								<span class="line line-3"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="navigation">
+			<nav>
+				<ul>
+					<li><a href="">Accueil</a></li>
+					<li class="submenu">
+						<a class="colapse-link collapsed" data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse">Mes réalisations <i class="icon-chevron-down"></i></a>
+						<ul class="collapse" id="collapse1">
+							<li>
+								<a href="#">Réalisation 1</a>
+							</li>
+						</ul>
+					</li>
+					<li class="btns">
+						<div class="btns-group d-flex align-items-center justify-content-center">
+							<a href="tel:#" class="btn btn-icon btn-yellow"><i class="icon-phone"></i></a>
+							<a href="mailto:#" class="btn btn-icon btn-pink"><i class="icon-mail"></i></a>
+							<a href="#" class="btn btn-icon btn-github"><i class="icon-github"></i></a>
+							<a href="#" class="btn btn-icon btn-linkedin"><i class="icon-linkedin"></i></a>
+						</div>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 	{{ content | safe }}
+<script src="/ressources/js/scripts.js"></script>
 </body>
 </html>

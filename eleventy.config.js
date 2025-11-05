@@ -33,6 +33,6 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({ './ressources/fonts': 'ressources/fonts' });
 	eleventyConfig.addPassthroughCopy({ './ressources/images': 'ressources/images' });
 	eleventyConfig.addPassthroughCopy({ './ressources/files': 'ressources/files' });
-	eleventyConfig.addPassthroughCopy({ './ressources/js': 'ressources/js' });
+	// eleventyConfig.addPassthroughCopy({ './ressources/js': 'ressources/js' });
 	eleventyConfig.setLayoutsDirectory('view/master');
 };

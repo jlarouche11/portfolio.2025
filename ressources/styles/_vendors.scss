@@ -1,0 +1,14 @@
+//BOOTSTRAP
+@use '../../node_modules/bootstrap/scss/bootstrap.scss';
+@use '../../node_modules/bootstrap/scss/bootstrap-reboot.scss';
+@use '../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+
+//AOS
+@use '../../node_modules/aos/src/sass/aos.scss';
+
+// SWIPERJS
+@use '../../node_modules/swiper/swiper-bundle.min.css';
+
+//FEATHERLIGHT
+@use '../../node_modules/featherlight/src/featherlight.css' as featherlight;
+@use '../../node_modules/featherlight/src/featherlight.gallery.css' as featherlightgallery;

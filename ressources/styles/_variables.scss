@@ -1,4 +1,24 @@
-$light: #fff;
-$dark: #202747;
-$color: #e73445;
-$gray: #f5f5f5;
+$light: #ffffff;
+$dark: #0a1024;
+$color: #8d9bf9;
+$colorTwo: #f7ce54;
+$colorThree: #f799b3;
+$gray: #848ba2;
+
+$light-color: #f5f6fa;
+$light-colorTwo: #fbebee;
+$light-colorThree: #fcf0cf;
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+
+$base-font: 'Red Hat Text', sans-serif;
+$second-font: 'Pacifico', cursive; /*h1,h2,h3,h4,h5*/
+
+$body-background: transparent;
+$text-color: $dark;
+$max-width-container: 1840px;
+
+$border-radius: 20px;
+$border-radius-large: $border-radius * 2;
+$border-radius-huge: $border-radius * 4;
+$border-radius-full: 2000px;

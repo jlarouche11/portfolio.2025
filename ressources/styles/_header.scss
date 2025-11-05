@@ -1,0 +1,401 @@
+@use 'sass:color';
+@use '_variables';
+
+header.main-header {
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	left: 0;
+	right: 0;
+
+	display: flex;
+	flex-direction: column;
+
+	pointer-events: none;
+	transition: all 0.3s ease, right 0s;
+
+	.main-header-inner {
+		position: relative;
+		z-index: 20;
+
+		flex-basis: auto;
+		height: 90px;
+		background-color: variables.$light;
+		box-shadow: 0 0 25px 0 rgba(variables.$color, 0.15);
+
+		border-bottom-left-radius: variables.$border-radius;
+		border-bottom-right-radius: variables.$border-radius;
+
+		pointer-events: auto;
+		transition: background 0.4s ease, height 0.4s ease, box-shadow 0.4s ease, border-bottom-left-radius 0.4s ease, border-bottom-right-radius 0.4s ease;
+
+		.container-fluid,
+		.row,
+		.col,
+		nav,
+		nav > ul,
+		nav > ul > li,
+		.btns-group {
+			height: 100%;
+		}
+		.logo {
+			width: 300px;
+			img {
+				width: 100%;
+				display: inline-block;
+			}
+		}
+		nav {
+			> ul {
+				> li {
+					position: relative;
+					display: inline-flex;
+					align-items: center;
+					padding: 0;
+					font-weight: 700;
+
+					&:not(:last-child) {
+						margin-right: 30px;
+					}
+					> a {
+						display: block;
+
+						color: variables.$dark;
+
+						font-size: 20px;
+						font-weight: 600;
+
+						cursor: pointer;
+						transition: color 0.3s ease;
+
+						&:hover,
+						&:active {
+							color: variables.$color;
+						}
+						&[target='_blank'] {
+							display: flex !important;
+							align-items: center;
+							i {
+								margin-left: 5px;
+								font-size: 0.6em;
+							}
+						}
+					}
+					&.submenu {
+						&:hover,
+						&:active {
+							> ul {
+								opacity: 1;
+								pointer-events: auto;
+							}
+						}
+						> a {
+							display: flex;
+							align-items: center;
+							i {
+								margin-left: 5px;
+								font-size: 12px;
+								color: variables.$dark;
+							}
+						}
+						> ul {
+							background-color: variables.$light;
+							box-shadow: 0 5px 10px 0 rgba(variables.$color, 0.15);
+
+							position: absolute;
+							// top: calc(100% - 15px);
+							top: 100%;
+							// right: 0;
+							left: 50%;
+							transform: translateX(-50%);
+
+							margin-top: 0 !important;
+							width: 250px;
+							opacity: 0;
+							pointer-events: none;
+							transition: opacity 0.4s ease, top 0.4s ease;
+							overflow: hidden;
+							border-bottom-left-radius: variables.$border-radius;
+							border-bottom-right-radius: variables.$border-radius;
+							> li {
+								display: block;
+								padding: 0;
+								margin-right: 0 !important;
+
+								> a {
+									background-color: variables.$light;
+
+									display: block;
+									padding: 12px 14px;
+									border-bottom: none;
+									text-align: center;
+
+									color: variables.$dark;
+									font-size: 18px;
+									font-weight: 600;
+									transition: color 0.3s ease, background 0.3s ease;
+
+									&:hover,
+									&:active {
+										background-color: variables.$color;
+										color: variables.$light;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		$lines-height: 5px;
+		$lines-width: 35px;
+		$space-between-lines: 7px;
+
+		.nav-btn {
+			height: 100%;
+			display: flex;
+			align-items: center;
+
+			color: variables.$dark;
+			cursor: pointer;
+			transition: color 0.3s ease;
+
+			.toggle-menu {
+				position: relative;
+				width: $lines-width;
+				.line {
+					background-color: variables.$dark;
+					position: absolute;
+					left: 0;
+					right: 0;
+					height: $lines-height;
+					width: $lines-width;
+					border-radius: variables.$border-radius;
+					opacity: 1;
+				}
+			}
+			&:hover,
+			&:active {
+				color: variables.$color;
+
+				.toggle-menu {
+					.line {
+						background-color: variables.$color;
+					}
+				}
+			}
+
+			.toggle-menu {
+				height: calc(calc($lines-height * 3) + calc($space-between-lines * 2));
+
+				.line {
+					&.line-1 {
+						top: 0;
+						transition: top 0.3s 0.3s ease, transform 0.3s 0s ease, color 0.3s 0s ease, background 0.3s 0s ease;
+					}
+					&.line-2 {
+						bottom: calc(50% - calc($lines-height / 2));
+						opacity: 1;
+						transition: opacity 0s 0.3s ease, color 0.3s 0s ease, background 0.3s 0s ease;
+					}
+					&.line-3 {
+						bottom: 0;
+						transition: bottom 0.3s 0.3s ease, transform 0.3s 0s ease, color 0.3s 0s ease, background 0.3s 0s ease;
+					}
+				}
+			}
+			&.open {
+				.toggle-menu {
+					.line {
+						&.line-1 {
+							top: calc(50% - calc($lines-height / 2));
+							transform: rotate(45deg);
+							transition: top 0.3s 0s ease, transform 0.3s 0.3s ease, color 0.3s 0s ease, background 0.3s 0s ease;
+						}
+						&.line-2 {
+							opacity: 0;
+							transition: opacity 0s 0.3s ease, color 0.3s 0s ease, background 0.3s 0s ease;
+						}
+						&.line-3 {
+							bottom: calc(50% - calc($lines-height / 2));
+							transform: rotate(-45deg);
+
+							transition: bottom 0.3s 0s ease, transform 0.3s 0.3s ease, color 0.3s 0s ease, background 0.3s 0s ease;
+						}
+					}
+				}
+			}
+		}
+	}
+	.navigation {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100dvh;
+		padding: 50px;
+		padding-top: calc(90px + 50px);
+		background-color: variables.$light;
+
+		overflow-y: scroll;
+
+		opacity: 0;
+		pointer-events: none;
+		transition: all 0.4s;
+
+		nav {
+			padding-bottom: 75px;
+
+			ul {
+				transition: all 0.4s;
+				position: relative;
+				text-align: center;
+
+				> li {
+					padding: 12px 0;
+					font-size: 34px;
+					line-height: 1;
+
+					&:first-child {
+						padding-top: 0;
+					}
+					&:last-child {
+						padding-bottom: 0;
+					}
+
+					&.submenu {
+						> a {
+							&[aria-expanded='true'] {
+								> i {
+									transform: rotate(180deg);
+								}
+							}
+							> i {
+								display: inline-block;
+								font-size: 0.6em;
+
+								transform: rotate(0deg);
+								transform-origin: center center;
+								transition: transform 0.4s ease;
+							}
+						}
+					}
+					> a {
+						font-weight: 600;
+						color: variables.$dark;
+
+						&:hover,
+						&:active {
+							color: variables.$color;
+						}
+						i {
+							color: variables.$dark;
+						}
+						&[target='_blank'] {
+							display: inline-flex !important;
+							align-items: center;
+							i {
+								margin-left: 5px;
+								font-size: 0.4em;
+							}
+						}
+					}
+					ul {
+						padding-left: 0;
+						margin-top: 0px !important;
+
+						li {
+							padding: 8px 0;
+							&:first-child {
+								padding-top: 25px;
+							}
+							&:last-child {
+								padding-bottom: 0;
+							}
+							font-size: 22px;
+							line-height: 1.2;
+							a {
+								font-weight: 600;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.open-navigation {
+		background: variables.$light;
+		right: 10px;
+		pointer-events: all;
+		.navigation {
+			opacity: 1;
+			pointer-events: auto;
+		}
+	}
+}
+
+@media only screen and (min-width: 2000px), only screen and (min-device-width: 2000px) {
+	header.main-header {
+		.main-header-inner {
+			.xxl-container-margins {
+				max-width: variables.$max-width-container !important;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1199px), only screen and (max-device-width: 1199px) {
+	header.main-header {
+		&.open-navigation {
+			right: 0px;
+		}
+	}
+}
+
+@media only screen and (max-width: 991px), only screen and (max-device-width: 991px) {
+}
+
+@media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
+}
+
+@media only screen and (max-width: 575px), only screen and (max-device-width: 575px) {
+	header.main-header {
+		.main-header-inner {
+			height: 70px;
+
+			.logo {
+				width: 200px;
+			}
+		}
+		.navigation {
+			padding: 20px;
+			padding-top: calc(70px + 20px);
+
+			nav {
+				ul {
+					> li {
+						font-size: 22px;
+						padding: 10px 0;
+
+						&.submenu {
+							> {
+								a {
+									i {
+										font-size: 18px;
+									}
+								}
+							}
+						}
+						ul {
+							li {
+								padding: 6px 0;
+								font-size: 18px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

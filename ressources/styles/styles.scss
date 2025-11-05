@@ -1,2 +1,14 @@
+// Librairies
+@use '_vendors';
+
+// Params de base
 @use '_variables';
 @use '_reset';
+@use '_core';
+
+// Fichiers individuels
+@use '_header';
+@use '_footer';
+
+@use '_content';
+@use '_hero';
