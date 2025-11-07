@@ -5,6 +5,7 @@ body {
 	font-family: variables.$base-font;
 	color: variables.$text-color;
 	font-style: normal;
+
 	div {
 		/* Barre de défilement*/
 		&::-webkit-scrollbar {
@@ -16,21 +17,21 @@ body {
 			height: 0px;
 		}
 		&::-webkit-scrollbar-thumb {
-			background: variables.$color;
+			background: variables.$blue;
 			border: 0px none variables.$light;
 			border-radius: 0px;
 			&:hover,
 			&:active {
-				background: variables.$color;
+				background: variables.$blue;
 			}
 		}
 		&::-webkit-scrollbar-track {
-			background: variables.$gray;
+			background: variables.$light;
 			border: 0px none variables.$light;
 			border-radius: 0px;
 			&:hover,
 			&:active {
-				background: variables.$gray;
+				background: variables.$light;
 			}
 		}
 		&::-webkit-scrollbar-corner {
@@ -108,196 +109,12 @@ body {
 	}
 }
 
-.lazyload,
-.lazyloading {
-	opacity: 0;
-}
-.lazyloaded {
-	opacity: 1;
-	transition: all 0.6s;
-}
-
-// Le html à intégrer : <div class="stars-rating" style="--rating:{$rating};"></div>
-.stars-rating {
-	--percent: calc(var(--rating) / 5 * 100% - 1px);
-
-	display: inline-block;
-	font-size: 25px;
-	font-family: Times;
-	line-height: 1;
-	width: 100%;
-	text-align: left;
-
-	&:before {
-		content: '★★★★★';
-		letter-spacing: 3px;
-		background: linear-gradient(90deg, variables.$dark var(--percent), variables.$light var(--percent));
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-
-		-webkit-text-stroke: 2px variables.$dark;
-	}
-}
-
-.contact-block {
-	width: 100%;
-
-	p {
-		padding-top: 0;
-		font-size: 20px;
-		font-weight: 500;
-		line-height: 1.15em;
-
-		i {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
-			flex-basis: 44px;
-			width: 44px;
-			height: 44px;
-			border: 2px solid variables.$color;
-			border-radius: 100%;
-
-			margin-right: 18px;
-			font-size: 22px;
-			transition: border-color 0.3s ease;
-
-			+ span {
-				flex-grow: 1;
-			}
-		}
-		a:not(.btn) {
-			color: variables.$dark;
-			font-weight: 500;
-
-			&:hover {
-				color: variables.$color;
-
-				i {
-					border-color: variables.$color;
-				}
-			}
-		}
-	}
-	&:last-child {
-		margin-bottom: 0;
-	}
-	&.socials-block {
-		ul {
-			list-style-type: none;
-			display: inline-flex;
-			li {
-				padding: 0;
-				margin-top: 0 !important;
-				margin-right: 22px;
-				a {
-					font-weight: 500;
-					i {
-						display: inline-block;
-						font-size: 28px;
-						color: variables.$dark;
-						transition: all 0.3s ease;
-						&:hover {
-							color: variables.$color;
-						}
-					}
-				}
-				&:before {
-					display: none;
-				}
-				&:last-child {
-					margin-right: 0;
-				}
-			}
-		}
-	}
-}
-
-.iframe-responsive {
-	position: relative;
-	display: block;
-	width: 100%;
-
-	&::before {
-		display: block;
-		content: '';
-		width: 100%;
-		padding-bottom: 56.25%;
-	}
-	iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-}
-
-.pagination {
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	.pager {
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: wrap;
-		margin: 0;
-		li {
-			padding: 0;
-			margin: 0;
-			font-size: 20px;
-			margin: 5px !important;
-			a {
-				padding: 15px;
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				width: 54px;
-				height: 54px;
-				border-radius: 100%;
-				color: variables.$dark;
-				background: variables.$gray;
-
-				&:hover,
-				&:active {
-					background: darken(variables.$gray, 5%);
-				}
-			}
-			&.previous,
-			&.next {
-				a {
-					font-size: 1.35em;
-				}
-			}
-			&.active {
-				a {
-					background: variables.$color;
-					color: variables.$light;
-					pointer-events: none !important;
-				}
-			}
-			&.disabled {
-				a {
-					color: darken(variables.$gray, 5%) !important;
-					pointer-events: none !important;
-				}
-			}
-			&:before {
-				display: none;
-			}
-		}
-	}
-}
-
 .featherlight {
 	&:last-of-type {
 		background: rgba(variables.$gray, 0.7);
 	}
 	.featherlight-close-icon {
-		background: lighten(variables.$color, 10%);
+		background: lighten(variables.$blue, 10%);
 		width: 50px;
 
 		color: variables.$light;
@@ -309,7 +126,7 @@ body {
 
 		&:hover,
 		&:active {
-			background: variables.$color;
+			background: variables.$blue;
 		}
 	}
 	.featherlight-content {
@@ -396,65 +213,6 @@ body {
 	}
 }
 
-.gmap,
-.gmap-multi {
-	width: 100%;
-	height: 350px;
-	img {
-		width: auto !important;
-		max-width: none !important;
-	}
-}
-
-.g-container {
-	width: 100%;
-	display: flex;
-	justify-content: flex-end;
-	overflow: hidden;
-	.g-recaptcha {
-		opacity: 0;
-		pointer-events: none;
-		overflow: unset;
-		width: 70px;
-		height: auto;
-		.grecaptcha-badge {
-			position: relative !important;
-			right: auto !important;
-			left: 0 !important;
-			bottom: 0px !important;
-			&:hover {
-				right: auto !important;
-				left: -185px !important;
-			}
-		}
-	}
-}
-.g-recaptcha {
-	position: fixed;
-	bottom: 30px;
-	right: 0;
-
-	width: 70px;
-	overflow: hidden;
-	.grecaptcha-badge {
-		position: fixed !important;
-		z-index: 99 !important;
-		bottom: 50px !important;
-		right: -186 !important;
-		left: auto !important;
-		transition: all 0.4s !important;
-		box-shadow: grey 0px 0px 0px !important;
-		&:hover {
-			right: 0 !important;
-			left: auto !important;
-		}
-		iframe {
-			max-width: 100% !important;
-			margin-left: 0 !important;
-		}
-	}
-}
-
 // Media queries de bootstrap
 @media (min-width: 576px) {
 	.container {
@@ -504,30 +262,6 @@ body {
 	}
 	.btn {
 		font-size: 17px;
-	}
-
-	.contact-block {
-		p {
-			font-size: 18px;
-
-			i {
-				margin-right: 12px;
-				font-size: 20px;
-			}
-		}
-	}
-
-	.pagination {
-		.pager {
-			li {
-				font-size: 18px;
-
-				a {
-					width: 48px;
-					height: 48px;
-				}
-			}
-		}
 	}
 
 	.featherlight {

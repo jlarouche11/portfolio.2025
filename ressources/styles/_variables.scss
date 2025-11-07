@@ -1,13 +1,176 @@
+@use 'sass:color';
+
 $light: #ffffff;
 $dark: #0a1024;
-$color: #8d9bf9;
-$colorTwo: #f7ce54;
-$colorThree: #f799b3;
+$blue: #8d9bf9;
+$yellow: #f7ce54;
+$pink: #f799b3;
 $gray: #848ba2;
 
-$light-color: #f5f6fa;
-$light-colorTwo: #fbebee;
-$light-colorThree: #fcf0cf;
+$light-blue: #f5f6fa;
+$light-yellow: #fcf0cf;
+$light-pink: #fbebee;
+
+// Thèmes de couleur
+// Simplifié, pas besoin de faire quelque chose d'énorme pour la première phase.
+// Mais tu peux quand même faire des parties de thèmes...
+$default-theme-colors: (
+	'bg': $light,
+	'h1': $dark,
+	'h2': $blue,
+	'h3': $dark,
+	'h4': $dark,
+	'h5': $dark,
+	'text': $gray,
+	'strong-text': $dark,
+	'border-color': $dark,
+
+	'text-selection-bg': $pink,
+	'text-selection-color': $light,
+
+	'decorative-glow': $blue
+);
+
+$light-blue-theme-colors: (
+	'bg': $light-blue,
+	'h1': $dark,
+	'h2': $blue,
+	'h3': $dark,
+	'h4': $dark,
+	'h5': $dark,
+	'text': $gray,
+	'strong-text': $dark,
+	'border-color': $dark,
+
+	'text-selection-bg': $pink,
+	'text-selection-color': $light,
+
+	'decorative-glow': $blue
+);
+
+$light-blue-gradient-theme-colors: (
+	'bg': linear-gradient(180deg, $light 0%, $light-blue 100%),
+	'h1': $dark,
+	'h2': $blue,
+	'h3': $dark,
+	'h4': $dark,
+	'h5': $dark,
+	'text': $gray,
+	'strong-text': $dark,
+	'border-color': $dark,
+
+	'text-selection-bg': $pink,
+	'text-selection-color': $light,
+
+	'decorative-glow': $blue
+);
+
+$blue-pink-yellow-gradient-theme-colors: (
+	'bg': linear-gradient(180deg, $light-blue 0%, $light-pink 50%, $light-yellow 100%),
+	'h1': $dark,
+	'h2': $blue,
+	'h3': $dark,
+	'h4': $dark,
+	'h5': $dark,
+	'text': $gray,
+	'strong-text': $dark,
+	'border-color': $dark,
+
+	'text-selection-bg': $pink,
+	'text-selection-color': $light,
+
+	'decorative-glow': $light
+);
+
+$theme-colors: (
+	'default': $default-theme-colors,
+	'light-blue': $light-blue-theme-colors,
+	'light-blue-gradient': $light-blue-gradient-theme-colors,
+	'blue-pink-yellow-gradient': $blue-pink-yellow-gradient-theme-colors
+);
+
+// Thème de boutons
+$btn-blue-theme-colors: (
+	'bg': $light,
+	'border-color': $dark,
+	'label-color': $dark,
+	'icon-bg': $blue,
+	'icon-color': $dark
+);
+
+$btn-pink-theme-colors: (
+	'bg': $light,
+	'border-color': $dark,
+	'label-color': $dark,
+	'icon-bg': $pink,
+	'icon-color': $dark
+);
+
+$btn-yellow-theme-colors: (
+	'bg': $light,
+	'border-color': $dark,
+	'label-color': $dark,
+	'icon-bg': $yellow,
+	'icon-color': $dark
+);
+
+$btn-light-theme-colors: (
+	'bg': $light,
+	'border-color': $dark,
+	'label-color': $dark,
+	'icon-bg': $light,
+	'icon-color': $dark
+);
+
+$btn-dark-theme-colors: (
+	'bg': $light,
+	'border-color': $dark,
+	'label-color': $dark,
+	'icon-bg': $dark,
+	'icon-color': $light
+);
+
+$btn-gray-theme-colors: (
+	'bg': $light,
+	'border-color': $dark,
+	'label-color': $dark,
+	'icon-bg': $gray,
+	'icon-color': $dark
+);
+
+$btn-linkedin-theme-colors: (
+	'bg': $light,
+	'border-color': $dark,
+	'label-color': $dark,
+	'icon-bg': #007ab9,
+	'icon-color': $light
+);
+
+$btn-github-theme-colors: (
+	'bg': $light,
+	'border-color': $dark,
+	'label-color': $dark,
+	'icon-bg': $light,
+	'icon-color': $dark
+);
+
+$btn-theme-colors: (
+	'light': $btn-light-theme-colors,
+	'gray': $btn-gray-theme-colors,
+	'dark': $btn-dark-theme-colors,
+	'blue': $btn-blue-theme-colors,
+	'pink': $btn-pink-theme-colors,
+	'yellow': $btn-yellow-theme-colors,
+	'github': $btn-github-theme-colors,
+	'linkedin': $btn-linkedin-theme-colors
+);
+
+// Thème pour les icones.
+$icon-theme-colors: (
+	'blue': $blue,
+	'yellow': $yellow,
+	'pink': $pink
+);
 
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
 

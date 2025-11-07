@@ -164,11 +164,11 @@ sup {
 /* Soulignement des textes*/
 ::-moz-selection {
 	color: variables.$light;
-	background: rgba(variables.$color, 0.8);
+	background: rgba(variables.$blue, 0.8);
 }
 ::selection {
 	color: variables.$light;
-	background: rgba(variables.$color, 0.8);
+	background: rgba(variables.$blue, 0.8);
 }
 
 /* Barre de défilement*/
@@ -181,21 +181,21 @@ sup {
 	height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-	background: variables.$color;
+	background: variables.$yellow;
 	border: 0px none variables.$light;
-	border-radius: 0px;
+	border-radius: variables.$border-radius-full;
 	&:hover,
 	&:active {
-		background: variables.$color;
+		background: variables.$yellow;
 	}
 }
 ::-webkit-scrollbar-track {
-	background: variables.$gray;
+	background: variables.$light-blue;
 	border: 0px none variables.$light;
 	border-radius: 0px;
 	&:hover,
 	&:active {
-		background: variables.$light;
+		background: variables.$light-blue;
 	}
 }
 ::-webkit-scrollbar-corner {

@@ -3,9 +3,9 @@
 
 // Hero de l'accueil
 .home-hero {
-	overflow: hidden;
-	background: variables.$light;
+	overflow-x: clip;
 	position: relative;
+	padding-bottom: 150px;
 	.container {
 		z-index: 10;
 		position: relative;
@@ -68,8 +68,18 @@
 		right: 0;
 		opacity: 0.2;
 		z-index: 1;
+	}
 
-		background: radial-gradient(circle, rgba(variables.$color, 1) 0%, rgba(variables.$light, 1) 50%);
+	@each $theme-name, $colors in variables.$theme-colors {
+		&.#{$theme-name}-bg {
+			&:after {
+				background: radial-gradient(
+					closest-side at 50% 50%,
+					rgba(map-get($colors, 'decorative-glow'), 1) 0%,
+					rgba(variables.$light, 0) 100%
+				); //La 2e couleur c'est peu importe vu qu'elle est transparente.
+			}
+		}
 	}
 }
 

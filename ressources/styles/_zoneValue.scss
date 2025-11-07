@@ -1,0 +1,12 @@
+@use '_variables';
+
+.value-block {
+	i {
+		font-size: 60px;
+		@each $theme-name, $color in variables.$icon-theme-colors {
+			&.#{$theme-name} {
+				color: $color;
+			}
+		}
+	}
+}

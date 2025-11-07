@@ -21,7 +21,7 @@ header.main-header {
 		flex-basis: auto;
 		height: 90px;
 		background-color: variables.$light;
-		box-shadow: 0 0 25px 0 rgba(variables.$color, 0.15);
+		box-shadow: 0 0 25px 0 rgba(variables.$blue, 0.15);
 
 		border-bottom-left-radius: variables.$border-radius;
 		border-bottom-right-radius: variables.$border-radius;
@@ -70,7 +70,7 @@ header.main-header {
 
 						&:hover,
 						&:active {
-							color: variables.$color;
+							color: variables.$blue;
 						}
 						&[target='_blank'] {
 							display: flex !important;
@@ -100,7 +100,7 @@ header.main-header {
 						}
 						> ul {
 							background-color: variables.$light;
-							box-shadow: 0 5px 10px 0 rgba(variables.$color, 0.15);
+							box-shadow: 0 5px 10px 0 rgba(variables.$blue, 0.15);
 
 							position: absolute;
 							// top: calc(100% - 15px);
@@ -137,7 +137,7 @@ header.main-header {
 
 									&:hover,
 									&:active {
-										background-color: variables.$color;
+										background-color: variables.$blue;
 										color: variables.$light;
 									}
 								}
@@ -177,11 +177,11 @@ header.main-header {
 			}
 			&:hover,
 			&:active {
-				color: variables.$color;
+				color: variables.$blue;
 
 				.toggle-menu {
 					.line {
-						background-color: variables.$color;
+						background-color: variables.$blue;
 					}
 				}
 			}
@@ -287,7 +287,7 @@ header.main-header {
 
 						&:hover,
 						&:active {
-							color: variables.$color;
+							color: variables.$blue;
 						}
 						i {
 							color: variables.$dark;
