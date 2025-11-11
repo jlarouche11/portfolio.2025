@@ -70,7 +70,7 @@ li {
 p {
 	strong {
 		font-weight: 600;
-		font-size: 24px;
+		font-size: clamp(20px, 3vw, 24px);
 		color: variables.$dark;
 	}
 }
@@ -103,12 +103,12 @@ p {
 	display: inline-grid;
 	grid-auto-flow: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	grid-gap: 10px;
 
-	font-size: 32px;
+	font-size: clamp(22px, 2vw, 32px);
 	font-weight: 700;
-	padding: 10px 10px 10px 55px;
+	padding: 10px 10px 10px clamp(30px, 5vw, 55px);
 	background: variables.$light;
 	border-color: variables.$dark;
 	color: variables.$dark;
@@ -179,10 +179,14 @@ p {
 		}
 		.block-icon {
 			align-items: end;
+			i {
+				margin-right: 3px;
+				font-size: 65px;
+			}
 		}
 	}
 	.block-icon {
-		margin-left: 70px;
+		margin-left: clamp(20px, 5vw, 70px);
 		width: 85px;
 		aspect-ratio: 1;
 		align-items: center;
@@ -351,6 +355,21 @@ $gutter-sizes: 30, 45, 60, 75;
 		vertical-align: top;
 	}
 }
+
+.border-top-radius {
+	border-top-left-radius: variables.$border-radius-huge;
+	border-top-right-radius: variables.$border-radius-huge;
+}
+.border-bottom-radius {
+	border-bottom-left-radius: variables.$border-radius-huge;
+	border-bottom-right-radius: variables.$border-radius-huge;
+}
+
+.block-col {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
 section {
 	width: 100%;
 	float: left;
@@ -359,9 +378,21 @@ section {
 	&.sect-container {
 		padding: 100px 0;
 
-		.block-col {
-			padding-top: 15px;
-			padding-bottom: 15px;
+		.col-lg-3,
+		.col-lg-4,
+		.col-lg-6,
+		.col-xl-3,
+		.col-xl-4,
+		.col-xl-6 {
+			> .full-box,
+			> .border-box {
+				h3 {
+					font-size: clamp(25px, 2vw, 40px);
+				}
+				h4 {
+					font-size: clamp(20px, 1.3vw, 25px);
+				}
+			}
 		}
 
 		.full-box,
@@ -377,15 +408,6 @@ section {
 				top: 100px;
 				position: sticky;
 			}
-		}
-
-		&.border-top-radius {
-			border-top-left-radius: variables.$border-radius-huge;
-			border-top-right-radius: variables.$border-radius-huge;
-		}
-		&.border-bottom-radius {
-			border-bottom-left-radius: variables.$border-radius-huge;
-			border-bottom-right-radius: variables.$border-radius-huge;
 		}
 
 		&.default-bg {
@@ -420,6 +442,14 @@ section {
 @media only screen and (max-width: 991px), only screen and (max-device-width: 991px) {
 }
 @media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
+	.border-top-radius {
+		border-top-left-radius: variables.$border-radius-large;
+		border-top-right-radius: variables.$border-radius-large;
+	}
+	.border-bottom-radius {
+		border-bottom-left-radius: variables.$border-radius-large;
+		border-bottom-right-radius: variables.$border-radius-large;
+	}
 	section {
 		&.sect-container {
 			padding: 75px 0;
@@ -435,6 +465,26 @@ section {
 	}
 }
 @media only screen and (max-width: 575px), only screen and (max-device-width: 575px) {
+	.btn {
+		&.btn-email {
+			word-break: break-all;
+		}
+		&.btn-github {
+			.block-icon {
+				i {
+					font-size: 45px;
+				}
+			}
+		}
+
+		.block-icon {
+			width: 65px;
+			i {
+				font-size: 30px;
+			}
+		}
+	}
+
 	section {
 		&.sect-container {
 			padding: 60px 0;

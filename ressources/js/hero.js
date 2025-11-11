@@ -4,7 +4,7 @@ var swiper = new Swiper('.home-hero .hero-gallery .hero-gallery-slider', {
 		disableOnInteraction: false
 	},
 	allowTouchMove: false,
-	slidesPerView: 2,
+	slidesPerView: 1,
 	centeredSlides: true,
 	effect: 'coverflow',
 	coverflowEffect: {
@@ -12,10 +12,18 @@ var swiper = new Swiper('.home-hero .hero-gallery .hero-gallery-slider', {
 		stretch: 0,
 		depth: 100,
 		modifier: 1,
-		scale: 0.7,
+		scale: 0.9,
 		slideShadows: true
 	},
 	loop: true,
 	spaceBetween: 0,
-	speed: 700
+	speed: 700,
+	breakpoints: {
+		768: {
+			slidesPerView: 2,
+			coverflowEffect: {
+				scale: 0.7
+			}
+		}
+	}
 });

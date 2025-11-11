@@ -1,0 +1,56 @@
+@use '_variables';
+
+.latest-project-block {
+	padding: 0px !important;
+	overflow: hidden;
+
+	.contents {
+		max-width: 40%;
+		padding: clamp(20px, 3vw, 40px);
+
+		.information {
+			margin-top: 35px;
+
+			.label {
+				display: block;
+				font-size: clamp(18px, 3vw, 22px);
+				line-height: 1.5em;
+				font-weight: 500;
+			}
+
+			p {
+				padding-top: 0px;
+			}
+		}
+	}
+	.image {
+		aspect-ratio: 16/9;
+		width: 100%;
+		border-left: 3px solid;
+	}
+
+	@each $theme-name, $colors in variables.$theme-colors {
+		&.#{$theme-name}-bg {
+			.image {
+				border-color: map-get($colors, 'border-color');
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 1199px), only screen and (max-device-width: 1199px) {
+	.latest-project-block {
+		.contents {
+			max-width: unset;
+		}
+		.image {
+			border-left: 0;
+		}
+	}
+}
+@media only screen and (max-width: 991px), only screen and (max-device-width: 991px) {
+}
+@media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
+}
+@media only screen and (max-width: 575px), only screen and (max-device-width: 575px) {
+}

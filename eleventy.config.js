@@ -1,6 +1,11 @@
 const path = require('node:path');
 const sass = require('sass');
 
+// Components
+const ZoneAbout = require('./view/zones/zoneAbout');
+const ZoneValue = require('./view/zones/zoneValue');
+const ZoneSkill = require('./view/zones/zoneSkill');
+
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addExtension('scss', {
 		outputFileExtension: 'css',
@@ -34,5 +39,11 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({ './ressources/images': 'ressources/images' });
 	eleventyConfig.addPassthroughCopy({ './ressources/files': 'ressources/files' });
 	// eleventyConfig.addPassthroughCopy({ './ressources/js': 'ressources/js' });
+
+	// Components réutilisable
+	eleventyConfig.addShortcode('ZoneAbout', ZoneAbout);
+	eleventyConfig.addShortcode('ZoneValue', ZoneValue);
+	eleventyConfig.addShortcode('ZoneSkill', ZoneSkill);
+
 	eleventyConfig.setLayoutsDirectory('view/master');
 };

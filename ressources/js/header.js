@@ -1,3 +1,13 @@
+/* Défilement du menu */
+var currentScroll = 0;
+var scrollObjectif = 110;
+
+$('header').toggleClass('active', $(this).scrollTop() > scrollObjectif);
+$(window).on('scroll', function () {
+	$('header').toggleClass('active', $(this).scrollTop() > scrollObjectif);
+	currentScroll = $(this).scrollTop();
+});
+
 /*Ouverture/fermeture du menu*/
 var scroll = true;
 

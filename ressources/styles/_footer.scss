@@ -1,0 +1,50 @@
+@use '_variables';
+
+footer {
+	position: relative;
+	width: 100%;
+	float: left;
+
+	.footer-top-bar {
+		padding: 55px 0;
+
+		h2 {
+			color: variables.$dark;
+			font-size: clamp(40px, 5vw, 110px);
+		}
+
+		.buttons-grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			grid-column-gap: 50px;
+			grid-row-gap: 35px;
+
+			.take-entire-column {
+				grid-column: span 2;
+			}
+		}
+	}
+
+	.footer-bottom-bar {
+		padding: 45px 0;
+	}
+}
+
+@media only screen and (max-width: 1199px), only screen and (max-device-width: 1199px) {
+	footer {
+		.footer-top-bar {
+			.buttons-grid {
+				grid-template-columns: repeat(1, minmax(0, 1fr));
+				.take-entire-column {
+					grid-column: span 1;
+				}
+			}
+		}
+	}
+}
+@media only screen and (max-width: 991px), only screen and (max-device-width: 991px) {
+}
+@media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
+}
+@media only screen and (max-width: 575px), only screen and (max-device-width: 575px) {
+}

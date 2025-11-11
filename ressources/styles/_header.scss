@@ -20,11 +20,6 @@ header.main-header {
 
 		flex-basis: auto;
 		height: 90px;
-		background-color: variables.$light;
-		box-shadow: 0 0 25px 0 rgba(variables.$blue, 0.15);
-
-		border-bottom-left-radius: variables.$border-radius;
-		border-bottom-right-radius: variables.$border-radius;
 
 		pointer-events: auto;
 		transition: background 0.4s ease, height 0.4s ease, box-shadow 0.4s ease, border-bottom-left-radius 0.4s ease, border-bottom-right-radius 0.4s ease;
@@ -328,9 +323,23 @@ header.main-header {
 		background: variables.$light;
 		right: 10px;
 		pointer-events: all;
+		.main-header-inner {
+			background-color: variables.$light;
+		}
 		.navigation {
 			opacity: 1;
 			pointer-events: auto;
+		}
+	}
+
+	&.active:not(.open-navigation) {
+		.main-header-inner {
+			background-color: variables.$light;
+
+			box-shadow: 0 0 25px 0 rgba(variables.$blue, 0.15);
+
+			border-bottom-left-radius: variables.$border-radius;
+			border-bottom-right-radius: variables.$border-radius;
 		}
 	}
 }

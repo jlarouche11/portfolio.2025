@@ -5,7 +5,6 @@
 .home-hero {
 	overflow-x: clip;
 	position: relative;
-	padding-bottom: 150px;
 	.container {
 		z-index: 10;
 		position: relative;
@@ -42,7 +41,7 @@
 
 					.media-container {
 						transition: margin 0.4s ease;
-						padding: 25px;
+						padding: clamp(15px, 1.5vw, 25px);
 						background: variables.$dark;
 						border-radius: variables.$border-radius-large;
 					}
@@ -118,4 +117,22 @@
 	.img-bg {
 		z-index: 1;
 	}
+}
+
+@media only screen and (max-width: 1199px), only screen and (max-device-width: 1199px) {
+	.home-hero {
+		.content {
+			min-height: unset;
+			height: 100%;
+			.hero-gallery {
+				margin-top: 80px;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 991px), only screen and (max-device-width: 991px) {
+}
+@media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
+}
+@media only screen and (max-width: 575px), only screen and (max-device-width: 575px) {
 }
