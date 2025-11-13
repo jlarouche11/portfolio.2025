@@ -1,4 +1,6 @@
-function ZoneProject({ title, description, languages, technologies, tasks, librairies, url, btnColor = 'btn-yellow', image }) {
+import slugify from '@sindresorhus/slugify';
+
+export default function ZoneProject({ title, description, languages, technologies, tasks, librairies, url, btnColor = 'btn-yellow', image }) {
 	var descriptionContent = '';
 	var languagesContent = '';
 	var technologiesContent = '';
@@ -47,7 +49,7 @@ function ZoneProject({ title, description, languages, technologies, tasks, libra
 		<div class="col-12 col-lg-12 block-col">
 			<div class="latest-project-block d-flex flex-column flex-xl-row default-bg border-box">
 				<div class="contents order-2 order-xl-1">
-					<h3>${title}</h3>
+					<h3 style="view-transition-name: project-${slugify(title)}-title;">${title}</h3>
 					${descriptionContent}
 					${languagesContent}
 					${technologiesContent}
@@ -64,5 +66,3 @@ function ZoneProject({ title, description, languages, technologies, tasks, libra
 		</div>
 	`;
 }
-
-module.exports = ZoneProject;

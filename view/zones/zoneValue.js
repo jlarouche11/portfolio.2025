@@ -1,4 +1,4 @@
-function ZoneValue({ zoneSize, icon, iconColor = 'yellow', title, text }) {
+export default function ZoneValue({ zoneSize, icon, iconColor = 'yellow', title, text }) {
 	var iconContent = '';
 
 	if (icon) {
@@ -17,5 +17,3 @@ function ZoneValue({ zoneSize, icon, iconColor = 'yellow', title, text }) {
 		</div>
 	`;
 }
-
-module.exports = ZoneValue;

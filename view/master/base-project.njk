@@ -1,3 +1,20 @@
 ---
 layout: base.njk
 ---
+
+<div class="project-hero default-bg">
+	<div class="container">
+		<div class="content row align-items-center">
+			<div class="col-12">
+				<h1 style="view-transition-name: project-{{ title | slugify }}-title;">{{ title }}</h1>
+			</div>
+
+			<div class="col-12">
+				<div class="image position-relative" >
+					<img src="{{ mainImage }}" alt="{{ title }}" class="img-bg position-center fit-cover">
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

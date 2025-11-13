@@ -172,10 +172,10 @@ $icon-theme-colors: (
 	'pink': $pink
 );
 
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CA:wght@100..400&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap');
 
 $base-font: 'Red Hat Text', sans-serif;
-$second-font: 'Pacifico', cursive; /*h1,h2,h3,h4,h5*/
+$second-font: 'Playwrite CA', cursive; /*h1,h2,h3,h4,h5*/
 
 $body-background: transparent;
 $text-color: $dark;

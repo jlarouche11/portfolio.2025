@@ -1,16 +1,16 @@
-const path = require('node:path');
-const sass = require('sass');
+import path from 'node:path';
+import * as sass from 'sass';
 
 // Components
-const ZoneAbout = require('./view/zones/zoneAbout');
-const ZoneValue = require('./view/zones/zoneValue');
-const ZoneSkill = require('./view/zones/zoneSkill');
-const ZoneProject = require('./view/zones/zoneProject');
+import ZoneAbout from './view/zones/zoneAbout.js';
+import ZoneValue from './view/zones/zoneValue.js';
+import ZoneSkill from './view/zones/zoneSkill.js';
+import ZoneProject from './view/zones/zoneProject.js';
 
 // Configs
-const relativeLinks = require('./config/relative-links.js');
+import relativeLinks from './config/relative-links.js';
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	eleventyConfig.addExtension('scss', {
 		outputFileExtension: 'css',
 
@@ -53,4 +53,4 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.setLayoutsDirectory('view/master');
 
 	eleventyConfig.addPlugin(relativeLinks);
-};
+}

@@ -99,8 +99,6 @@
 		h1 {
 			display: inline-block;
 			width: 100%;
-			font-size: clamp(30px, 4vw, 50px);
-			font-weight: 800;
 		}
 	}
 	&:after {
@@ -111,11 +109,46 @@
 		bottom: 0;
 		left: 0;
 		right: 0;
-		z-index: 2;
-		opacity: 0.8;
-	}
-	.img-bg {
+		opacity: 0.2;
 		z-index: 1;
+	}
+	@each $theme-name, $colors in variables.$theme-colors {
+		&.#{$theme-name}-bg {
+			&:after {
+				background: radial-gradient(
+					closest-side at 50% 50%,
+					rgba(map-get($colors, 'decorative-glow'), 1) 0%,
+					rgba(variables.$light, 0) 100%
+				); //La 2e couleur c'est peu importe vu qu'elle est transparente.
+			}
+		}
+	}
+}
+
+// Hero des projets
+.project-hero {
+	width: 100%;
+	z-index: 10;
+	position: relative;
+
+	.container {
+		height: 100%;
+	}
+
+	.content {
+		position: relative;
+		z-index: 10;
+		height: 100%;
+		padding: 150px 0 120px;
+		// text-align: center;
+		h1 {
+			display: inline-block;
+			width: 100%;
+		}
+
+		.image {
+			aspect-ratio: 16/9;
+		}
 	}
 }
 

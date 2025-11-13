@@ -15,9 +15,9 @@
  *	* credit: https://github.com/11ty/eleventy/discussions/2516#discussioncomment-11999750 (thank you so much)
  */
 
-const path = require('node:path');
+import path from 'path';
 
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
 	// Apply to all HTML output in your project
 	eleventyConfig.htmlTransformer.addUrlTransform(
 		'html',
@@ -51,4 +51,4 @@ module.exports = function (eleventyConfig) {
 			priority: -1 // run last last (after PathToUrl)
 		}
 	);
-};
+}

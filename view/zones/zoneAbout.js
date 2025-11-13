@@ -1,4 +1,4 @@
-function ZoneAbout({
+export default function ZoneAbout({
 	imageCol = 'col-xl-5',
 	imageLink,
 	imageAlt,
@@ -24,7 +24,7 @@ function ZoneAbout({
 	if (imageLink) {
 		image = `
 		<div class="col-12 ${imageCol} block-col">
-			<div class="d-flex align-items-center justify-content-center">
+			<div class="d-flex align-items-center justify-content-center" data-aos="zoom-in" data-aos-duration="600" data-aos-anchor-placement="center-bottom">
 				<div class="about-image position-relative">
 					<img src="${imageLink}" alt="${imageAlt}" class="img-bg fit-cover position-center">
 				</div>
@@ -41,5 +41,3 @@ function ZoneAbout({
 	</div>
 	`;
 }
-
-module.exports = ZoneAbout;

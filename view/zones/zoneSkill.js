@@ -1,4 +1,4 @@
-function ZoneSkill({ zoneSize, title, subtitle, text, image, alt }) {
+export default function ZoneSkill({ zoneSize, title, subtitle, text, image, alt }) {
 	var imageContent = '';
 	var subtitleContent = '';
 
@@ -17,7 +17,7 @@ function ZoneSkill({ zoneSize, title, subtitle, text, image, alt }) {
 
 	return `
 		<div class="col-12 ${zoneSize} block-col">
-			<div class="skill-block default-bg border-box">
+			<div class="skill-block default-bg border-box" data-aos="flip-left" data-aos-duration="800" data-aos-anchor-placement="center-bottom">
 				${subtitleContent}
 				<h3>${title}</h3>
 				<p>${text}</p>
@@ -26,5 +26,3 @@ function ZoneSkill({ zoneSize, title, subtitle, text, image, alt }) {
 		</div>
 	`;
 }
-
-module.exports = ZoneSkill;

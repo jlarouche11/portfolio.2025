@@ -38,7 +38,7 @@ linkedin: #
 								<li class="submenu"><a>Mes réalisations <i class="icon-chevron-down"></i></a>
 									<ul>
 										{% for project in collections.projects | reverse %}
-											<li><a href="{{ project.url }}">{{ project.data.name }}</a></li>
+											<li><a href="{{ project.url }}">{{ project.data.title }}</a></li>
 										{% endfor %}
 									</ul>
 								</li>
@@ -73,7 +73,7 @@ linkedin: #
 						<a class="colapse-link collapsed" data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse">Mes réalisations <i class="icon-chevron-down"></i></a>
 						<ul class="collapse" id="collapse1">
 							{% for project in collections.projects | reverse %}
-								<li><a href="{{ project.url }}">{{ project.data.name }}</a></li>
+								<li><a href="{{ project.url }}">{{ project.data.title }}</a></li>
 							{% endfor %}
 						</ul>
 					</li>
@@ -95,7 +95,7 @@ linkedin: #
 			<div class="footer-top-bar">
 				<div class="row content-row justify-content-center">
 					<div class="col-12 col-lg-8 block-col">
-						<h2 class="text-center mb-5">Pour me contacter</h2>
+						<h2 class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">Pour me contacter</h2>
 						<div class="buttons-grid">
 							<a href="mailto:{{ email }}" class="btn btn-pink btn-email take-entire-column">{{ email }} <div class="block-icon"><i class="icon-mail"></i></div></a>
 							<a href="{{ github }}" target="_blank" class="btn btn-github">Github <div class="block-icon"><i class="icon-github"></i></div></a>
