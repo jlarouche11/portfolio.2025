@@ -14,57 +14,18 @@ permalink: index.html
 				<div class="hero-gallery">
 					<div class="hero-gallery-slider swiper">
 						<div class="swiper-wrapper">
-							<div class="swiper-slide slide">
-								<div class="media-container">
-									<div class="media image">
-										<a href="#" class="link-overflow"></a>
-										<img src="ressources/images/test/test-website-thumbnail.png" alt="" class="img-bg fit-cover position-center">
+							{% for project in collections.projects %}
+								<div class="swiper-slide slide">
+									<div class="media-container">
+										<div class="media image">
+											<a href="{{ project.url }}" class="link-overflow"></a>
+											<img src="{{ project.data.mainImage }}" alt="{{ project.data.name }}" class="img-bg fit-cover position-center">
+										</div>
 									</div>
 								</div>
-							</div>
-							<div class="swiper-slide slide">
-								<div class="media-container">
-									<div class="media image">
-										<a href="#" class="link-overflow"></a>
-										<img src="ressources/images/test/test-website-thumbnail.png" alt="" class="img-bg fit-cover position-center">
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide slide">
-								<div class="media-container">
-									<div class="media image">
-										<a href="#" class="link-overflow"></a>
-										<img src="ressources/images/test/test-website-thumbnail.png" alt="" class="img-bg fit-cover position-center">
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide slide">
-								<div class="media-container">
-									<div class="media image">
-										<a href="#" class="link-overflow"></a>
-										<img src="ressources/images/test/test-website-thumbnail.png" alt="" class="img-bg fit-cover position-center">
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide slide">
-								<div class="media-container">
-									<div class="media image">
-										<a href="#" class="link-overflow"></a>
-										<img src="ressources/images/test/test-website-thumbnail.png" alt="" class="img-bg fit-cover position-center">
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide slide">
-								<div class="media-container">
-									<div class="media image">
-										<a href="#" class="link-overflow"></a>
-										<img src="ressources/images/test/test-website-thumbnail.png" alt="" class="img-bg fit-cover position-center">
-									</div>
-								</div>
-							</div>
+							{% endfor %}
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -75,16 +36,18 @@ permalink: index.html
 	<section class="sect-container light-blue-gradient-bg">
 		<div class="container">
 			<div class="content-row row align-items-center">
-				{% ZoneAbout imageLink="ressources/images/test/image-placeholder.png", imageAlt="Alt text", btnLink="#", btnLabel="Consulter mon CV", btnIcon="icon-download", btnColor="btn-yellow", contentText='<h2>À propos de moi</h2>&#13;<p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</strong></p>&#13;<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>' %}
+				{% for zone in collections.zoneAboutHome %}
+					{% ZoneAbout imageLink=zone.data.imageLink, imageAlt=zone.data.imageAlt, btnLink=zone.data.btnLink, btnLabel=zone.data.btnLabel, btnIcon=zone.data.btnIcon, btnColor=zone.data.btnColor, contentText=zone.content %}
+				{% endfor %}
 			</div>
 		</div>
 	</section>
 	<section class="sect-container light-blue-bg">
 		<div class="container">
 			<div class="content-row row large-gutters-60">
-				{% ZoneValue zoneSize="col-lg-4", icon="icon-crown", iconColor = "yellow", title="Valeur / force / qualité 1", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." %}
-				{% ZoneValue zoneSize="col-lg-4", icon="icon-crown", iconColor = "blue", title="Valeur / force / qualité 2", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." %}
-				{% ZoneValue zoneSize="col-lg-4", icon="icon-crown", iconColor = "pink", title="Valeur / force / qualité 3", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." %}
+				{% for zone in collections.zoneValueHome %}
+					{% ZoneValue zoneSize=zone.data.zoneSize, icon=zone.data.icon, iconColor=zone.data.iconColor, title=zone.data.title, text=zone.data.text %}
+				{% endfor %}
 			</div>
 		</div>
 	</section>
@@ -94,12 +57,9 @@ permalink: index.html
 				<div class="col-12 block-col mb-5">
 					<h2 class="text-center">Mes compétences de Développeuse Full Stack</h2>
 				</div>
-				{% ZoneSkill zoneSize="col-lg-4", title="Compétence 1", subtitle="Sur-titre pertinent", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", image="ressources/images/test/logoipsum-icon.svg" %}
-				{% ZoneSkill zoneSize="col-lg-4", title="Compétence 2", subtitle="Sur-titre pertinent", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", image="ressources/images/test/logoipsum-icon.svg" %}
-				{% ZoneSkill zoneSize="col-lg-4", title="Compétence 3", subtitle="Sur-titre pertinent", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", image="ressources/images/test/logoipsum-icon.svg" %}
-				{% ZoneSkill zoneSize="col-lg-4", title="Compétence 4", subtitle="Sur-titre pertinent", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", image="ressources/images/test/logoipsum-icon.svg" %}
-				{% ZoneSkill zoneSize="col-lg-4", title="Compétence 5", subtitle="Sur-titre pertinent", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", image="ressources/images/test/logoipsum-icon.svg" %}
-				{% ZoneSkill zoneSize="col-lg-4", title="Compétence 6", subtitle="Sur-titre pertinent", text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", image="ressources/images/test/logoipsum-icon.svg" %}
+				{% for zone in collections.zoneSkillHome %}
+					{% ZoneSkill zoneSize=zone.data.zoneSize, title=zone.data.title, subtitle=zone.data.subtitle, text=zone.data.text, image=zone.data.image %}
+				{% endfor %}
 			</div>
 		</div>
 	</section>
@@ -109,58 +69,10 @@ permalink: index.html
 				<div class="col-12 col-lg-12 block-col">
 					<h2 class="text-center">Mes dernières réalisations</h2>
 				</div>
-				<div class="col-12 col-lg-12 block-col">
-					<div class="latest-project-block d-flex flex-column flex-xl-row default-bg border-box">
-						<div class="contents order-2 order-xl-1">
-							<h3>Auberge le Parasol</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							<div class="information">
-								<span class="label">Langage</span>
-								<p><strong>Lorem ipsum</strong></p>
-							</div>
-							<div class="information">
-								<span class="label">Technologie</span>
-								<p><strong>Lorem ipsum</strong></p>
-							</div>
-							<div class="information">
-								<span class="label">Librairies</span>
-								<p><strong>Lorem ipsum, Dolor sit amet, Consectetur adipiscing elit</strong></p>
-							</div>
-							<div class="btns-group">
-								<a href="#" class="btn btn-yellow">Découvrez le projet <div class="block-icon"><i class="icon-arrow-right"></i></div></a>
-							</div>
-						</div>
-						<div class="image position-relative order-1 order-xl-2">
-							<img src="ressources/images/test/test-website-thumbnail.png" alt="" class="img-bg fit-cover position-center">
-						</div>
-					</div>
-				</div>
-				<div class="col-12 col-lg-12 block-col">
-					<div class="latest-project-block d-flex flex-column flex-xl-row default-bg border-box">
-						<div class="contents order-2 order-xl-1">
-							<h3>Auberge le Parasol</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-							<div class="information">
-								<span class="label">Langage</span>
-								<p><strong>Lorem ipsum</strong></p>
-							</div>
-							<div class="information">
-								<span class="label">Technologie</span>
-								<p><strong>Lorem ipsum</strong></p>
-							</div>
-							<div class="information">
-								<span class="label">Librairies</span>
-								<p><strong>Lorem ipsum, Dolor sit amet, Consectetur adipiscing elit</strong></p>
-							</div>
-							<div class="btns-group">
-								<a href="#" class="btn btn-blue">Découvrez le projet <div class="block-icon"><i class="icon-arrow-right"></i></div></a>
-							</div>
-						</div>
-						<div class="image position-relative order-1 order-xl-2">
-							<img src="ressources/images/test/test-website-thumbnail.png" alt="" class="img-bg fit-cover position-center">
-						</div>
-					</div>
-				</div>
+
+				{% for project in collections.projects %}
+					{% ZoneProject title=project.data.name, description=project.data.summary, languages=project.data.languages, technologies=project.data.technologies, tasks=project.data.tasks, librairies=project.data.libraries, url=project.url, btnColor=project.data.btnColor, image=project.data.mainImage %}
+				{% endfor %}
 			</div>
 		</div>
 	</section>

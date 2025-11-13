@@ -5,6 +5,10 @@ const sass = require('sass');
 const ZoneAbout = require('./view/zones/zoneAbout');
 const ZoneValue = require('./view/zones/zoneValue');
 const ZoneSkill = require('./view/zones/zoneSkill');
+const ZoneProject = require('./view/zones/zoneProject');
+
+// Configs
+const relativeLinks = require('./config/relative-links.js');
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addExtension('scss', {
@@ -44,6 +48,9 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addShortcode('ZoneAbout', ZoneAbout);
 	eleventyConfig.addShortcode('ZoneValue', ZoneValue);
 	eleventyConfig.addShortcode('ZoneSkill', ZoneSkill);
+	eleventyConfig.addShortcode('ZoneProject', ZoneProject);
 
 	eleventyConfig.setLayoutsDirectory('view/master');
+
+	eleventyConfig.addPlugin(relativeLinks);
 };
