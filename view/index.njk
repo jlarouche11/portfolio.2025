@@ -39,7 +39,7 @@ permalink: index.html
 		<div class="container">
 			<div class="content-row row align-items-center">
 				{% for zone in collections.zoneAboutHome %}
-					{% ZoneAbout imageLink=zone.data.imageLink, imageAlt=zone.data.imageAlt, btnLink=zone.data.btnLink, btnLabel=zone.data.btnLabel, btnIcon=zone.data.btnIcon, btnColor=zone.data.btnColor, contentText=zone.content %}
+					{% ZoneAbout imageLink=zone.data.imageLink, imageAlt=zone.data.imageAlt, btnLink=zone.data.btnLink, btnLabel=zone.data.btnLabel, btnIcon=zone.data.btnIcon, btnColor=zone.data.btnColor, contentText=zone.content, btnIsExternal=true %}
 				{% endfor %}
 			</div>
 		</div>

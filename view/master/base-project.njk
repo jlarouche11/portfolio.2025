@@ -9,12 +9,104 @@ layout: base.njk
 				<h1 style="view-transition-name: project-{{ title | slugify }}-title;">{{ title }}</h1>
 			</div>
 
-			<div class="col-12">
-				<div class="image position-relative" >
-					<img src="{{ mainImage }}" alt="{{ title }}" class="img-bg position-center fit-cover">
+			<div class="col-12 mb-5">
+				<div class="d-flex justify-content-end">
+					<time class="year">{{ year }}</time>
 				</div>
+			</div>
 
+			<div class="col-12">
+				<div class="image-container">
+					<div class="image position-relative">
+						<img src="{{ mainImage }}" alt="{{ title }}" class="img-bg position-center fit-cover" style="view-transition-name: project-{{ title | slugify }}-image;">
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
+</div>
+
+<div class="content-page project-page">
+	<section class="sect-container light-blue-pink-yellow-gradient-bg border-bottom-radius">
+		<div class="container">
+			<div class="content-row row large-gutters-100">
+				<div class="col-12 col-lg-9 block-col">
+					<h2 class="informations-title">{{ summary }}</h2>
+				</div>
+				<div class="col-12 block-col">
+					<hr>
+				</div>
+				<div class="col-12 col-lg-8 block-col">
+					<div class="no-bg no-box">
+						{{ content | safe }}
+
+						<div class="btns-group align-items-start flex-column">
+							<a href="{{ link }}" class="btn btn-yellow mb-5" target="_blank">Visiter le site internet <div class="block-icon"><i class="icon-arrow-external"></i></div></a>
+							<a href="{{ archivedLink }}" class="btn btn-small btn-light ms-2" target="_blank">Consulter le lien d'archive <i class="icon-archive"></i></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-4 block-col">
+					<div class="project-informations-block">
+						{% if languages %}
+							<div class="information">
+								<span class="label">Langage(s) de programmation utilisé(s)</span>
+								<p><strong>{{ languages }}</strong></p>
+							</div>
+						{% endif %}
+						{% if technologies %}
+							<div class="information">
+								<span class="label">Technologie(s) importante(s) au projet</span>
+								<p><strong>{{ technologies }}</strong></p>
+							</div>
+						{% endif %}
+						{% if tasks %}
+							<div class="information">
+								<span class="label">Tâche(s) accomplie(s)</span>
+								<p><strong>{{ tasks }}</strong></p>
+							</div>
+						{% endif %}
+						{% if libraries %}
+							<div class="information">
+								<span class="label">Librairie(s) importante(s)</span>
+								<p><strong>{{ libraries }}</strong></p>
+							</div>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="sect-container default-bg">
+		<div class="container">
+			<div class="content-row row large-gutters-100">
+				<div class="col-12 col-lg-12 block-col">
+					<h2 class="informations-title">Galerie</h2>
+				</div>
+				<div class="col-12 block-col">
+					<hr>
+				</div>
+				<div class="col-12 block-col">
+					<div class="gallery-block">
+						{% for media in gallery %}
+							{% if media.type == 'youtube' %}
+								<div class="media video">
+									<img class="img-bg fit-cover position-center" src="https://i3.ytimg.com/vi/{{ media.source }}/maxresdefault.jpg" alt="" />
+									<a href="https://www.youtube.com/embed/{{ media.source }}" data-featherlight="iframe" data-featherlight-variant="featherlight-video" class="gallery-link link-overflow flGallery"></a>
+								</div>
+							{% else %}
+								<div class="media image">
+									<a href="{{ media.source }}" data-featherlight="{{ media.source }}" class="link-overflow flGallery"></a>
+									<img class="img-bg fit-cover position-center" src="{{ media.source }}" alt="" />
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
 </div>

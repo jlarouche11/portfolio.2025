@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use 'sass:map';
 @use '_variables';
 
 h1,
@@ -116,8 +117,7 @@ p {
 
 	transition: all 0.3s;
 
-	&:not(.btn-icon) {
-		border: 3px solid;
+	&:not(.btn-icon):not(.btn-small) {
 		box-shadow: 8px 8px 0 0 variables.$dark;
 		&:hover,
 		&:active {
@@ -137,35 +137,40 @@ p {
 			transform: translate(4px, 4px);
 		}
 	}
+	&:not(.btn-icon) {
+		border: 3px solid;
+	}
 	@each $theme-name, $colors in variables.$btn-theme-colors {
 		&.btn-#{$theme-name} {
-			border-color: map-get($colors, 'border-color');
-			background: map-get($colors, 'bg');
-			color: map-get($colors, 'label-color');
+			border-color: map.get($colors, 'border-color');
+			background: map.get($colors, 'bg');
+			color: map.get($colors, 'label-color');
 
-			&:not(.btn-icon) {
-				box-shadow: 8px 8px 0 0 map-get($colors, 'border-color');
+			&:not(.btn-icon):not(.btn-small) {
+				box-shadow: 8px 8px 0 0 map.get($colors, 'border-color');
 				&:hover,
 				&:active {
-					border-color: map-get($colors, 'border-color');
-					background: map-get($colors, 'bg');
-					color: map-get($colors, 'label-color');
+					border-color: map.get($colors, 'border-color');
+					background: map.get($colors, 'bg');
+					color: map.get($colors, 'label-color');
 				}
 
 				&:active {
-					box-shadow: 4px 4px 0 0 map-get($colors, 'border-color');
+					box-shadow: 4px 4px 0 0 map.get($colors, 'border-color');
 				}
 			}
-
-			&.btn-icon {
-				background: map-get($colors, 'icon-bg');
-				color: map-get($colors, 'icon-color');
-				border-color: map-get($colors, 'border-color'); // Ne met pas de couleur sur certains si je ne le remet pas
+			&.btn-icon,
+			&.btn-small {
+				background: map.get($colors, 'icon-bg');
+				color: map.get($colors, 'icon-color');
+				border-color: map.get($colors, 'border-color'); // Ne met pas de couleur sur certains si je ne le remet pas
 			}
-			.block-icon {
-				background: map-get($colors, 'icon-bg');
-				color: map-get($colors, 'icon-color');
-				border-color: map-get($colors, 'border-color');
+			&:not(.btn-small) {
+				.block-icon {
+					background: map.get($colors, 'icon-bg');
+					color: map.get($colors, 'icon-color');
+					border-color: map.get($colors, 'border-color');
+				}
 			}
 		}
 	}
@@ -185,19 +190,21 @@ p {
 			}
 		}
 	}
-	.block-icon {
-		margin-left: clamp(20px, 5vw, 70px);
-		width: 85px;
-		aspect-ratio: 1;
-		align-items: center;
-		justify-content: center;
-		display: inline-flex;
-		border: 3px solid variables.$dark;
-		border-radius: variables.$border-radius-full;
-		transition: transform 0.3s ease;
+	&:not(.btn-small) {
+		.block-icon {
+			margin-left: clamp(20px, 5vw, 70px);
+			width: 85px;
+			aspect-ratio: 1;
+			align-items: center;
+			justify-content: center;
+			display: inline-flex;
+			border: 3px solid variables.$dark;
+			border-radius: variables.$border-radius-full;
+			transition: transform 0.3s ease;
 
-		i {
-			font-size: 40px;
+			i {
+				font-size: 40px;
+			}
 		}
 	}
 	&.btn-icon {
@@ -216,6 +223,15 @@ p {
 
 		&:hover {
 			transform: scale(1.1);
+		}
+	}
+	&.btn-small {
+		padding: 10px 30px;
+		font-size: clamp(18px, 2vw, 22px);
+		grid-gap: 15px;
+
+		&:hover {
+			transform: scale(1.03);
 		}
 	}
 	i.external-icon {
@@ -275,7 +291,7 @@ ul.no-marker {
 	}
 }
 
-$gutter-sizes: 30, 45, 60, 75;
+$gutter-sizes: 30, 45, 60, 75, 100;
 
 @each $gutter-size in $gutter-sizes {
 	.row.large-gutters-#{$gutter-size} {
@@ -296,40 +312,40 @@ $gutter-sizes: 30, 45, 60, 75;
 
 @each $theme-name, $colors in variables.$theme-colors {
 	.#{$theme-name}-bg {
-		background: map-get($colors, 'bg');
-		color: map-get($colors, 'text');
+		background: map.get($colors, 'bg');
+		color: map.get($colors, 'text');
 
 		strong {
-			color: map-get($colors, 'strong-text');
+			color: map.get($colors, 'strong-text');
 		}
 
 		::selection {
-			color: map-get($colors, 'text-selection-color');
-			background: rgba(map-get($colors, 'text-selection-bg'), 0.8);
+			color: map.get($colors, 'text-selection-color');
+			background: rgba(map.get($colors, 'text-selection-bg'), 0.8);
 		}
 		::-moz-selection {
-			color: map-get($colors, 'text-selection-color');
-			background: rgba(map-get($colors, 'text-selection-bg'), 0.8);
+			color: map.get($colors, 'text-selection-color');
+			background: rgba(map.get($colors, 'text-selection-bg'), 0.8);
 		}
 
 		h1 {
-			color: map-get($colors, 'h1');
+			color: map.get($colors, 'h1');
 		}
 		h2 {
-			color: map-get($colors, 'h2');
+			color: map.get($colors, 'h2');
 		}
 		h3 {
-			color: map-get($colors, 'h3');
+			color: map.get($colors, 'h3');
 		}
 		h4 {
-			color: map-get($colors, 'h4');
+			color: map.get($colors, 'h4');
 		}
 		h5 {
-			color: map-get($colors, 'h5');
+			color: map.get($colors, 'h5');
 		}
 
 		&.border-box {
-			border: 3px solid map-get($colors, 'border-color');
+			border: 3px solid map.get($colors, 'border-color');
 		}
 	}
 }
@@ -345,7 +361,7 @@ $gutter-sizes: 30, 45, 60, 75;
 		font-weight: 400;
 		&:hover,
 		&:active {
-			color: darken(variables.$blue, 10%);
+			color: color.scale(variables.$blue, $lightness: 10%);
 		}
 	}
 	img:not(.img-bg) {

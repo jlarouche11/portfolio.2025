@@ -1,3 +1,4 @@
+@use 'sass:map';
 @use '_variables';
 
 .about-image {
@@ -13,7 +14,7 @@
 @each $theme-name, $colors in variables.$theme-colors {
 	.#{$theme-name}-bg {
 		.about-image {
-			box-shadow: 0px 0px 200px map-get($colors, 'decorative-glow');
+			box-shadow: 0px 0px 200px map.get($colors, 'decorative-glow');
 		}
 	}
 }

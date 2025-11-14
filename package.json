@@ -2,10 +2,10 @@
 	"name": "portfolio.2025",
 	"version": "1.0.0",
 	"description": "",
-	"exports": "./index.js",
+	"type": "module",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"watch": "npx @11ty/eleventy --serve"
+		"watch": "npx @11ty/eleventy --serve --quiet"
 	},
 	"keywords": [],
 	"author": "",

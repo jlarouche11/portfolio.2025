@@ -1,10 +1,10 @@
 //BOOTSTRAP
-@use '../../node_modules/bootstrap/scss/bootstrap.scss';
-@use '../../node_modules/bootstrap/scss/bootstrap-reboot.scss';
-@use '../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+@use '../../node_modules/bootstrap/dist/css/bootstrap.min.css' as bootstrap;
+@use '../../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css' as bootstrap-reboot;
+@use '../../node_modules/bootstrap/dist/css/bootstrap-grid.min.css' as bootstrap-grid;
 
 //AOS
-@use '../../node_modules/aos/src/sass/aos.scss';
+@use '../../node_modules/aos/dist/aos.css' as aos;
 
 // SWIPERJS
 @use '../../node_modules/swiper/swiper-bundle.min.css';

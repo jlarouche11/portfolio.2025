@@ -1,4 +1,5 @@
 @use '_variables';
+@use 'sass:color';
 
 body {
 	background-color: variables.$body-background;
@@ -114,7 +115,7 @@ body {
 		background: rgba(variables.$gray, 0.7);
 	}
 	.featherlight-close-icon {
-		background: lighten(variables.$blue, 10%);
+		background: color.scale(variables.$blue, $lightness: 10%);
 		width: 50px;
 
 		color: variables.$light;

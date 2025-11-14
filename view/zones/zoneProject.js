@@ -60,7 +60,7 @@ export default function ZoneProject({ title, description, languages, technologie
 					</div>
 				</div>
 				<div class="image position-relative order-1 order-xl-2">
-					<img src="${image}" alt="${title}" class="img-bg fit-cover position-center">
+					<img src="${image}" alt="${title}" class="img-bg fit-cover position-center" style="view-transition-name: project-${slugify(title)}-image;">
 				</div>
 			</div>
 		</div>

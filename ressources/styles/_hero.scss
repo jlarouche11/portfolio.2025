@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use 'sass:map';
 @use '_variables';
 
 // Hero de l'accueil
@@ -74,7 +75,7 @@
 			&:after {
 				background: radial-gradient(
 					closest-side at 50% 50%,
-					rgba(map-get($colors, 'decorative-glow'), 1) 0%,
+					rgba(map.get($colors, 'decorative-glow'), 1) 0%,
 					rgba(variables.$light, 0) 100%
 				); //La 2e couleur c'est peu importe vu qu'elle est transparente.
 			}
@@ -117,7 +118,7 @@
 			&:after {
 				background: radial-gradient(
 					closest-side at 50% 50%,
-					rgba(map-get($colors, 'decorative-glow'), 1) 0%,
+					rgba(map.get($colors, 'decorative-glow'), 1) 0%,
 					rgba(variables.$light, 0) 100%
 				); //La 2e couleur c'est peu importe vu qu'elle est transparente.
 			}
@@ -139,15 +140,30 @@
 		position: relative;
 		z-index: 10;
 		height: 100%;
-		padding: 150px 0 120px;
+		padding: 150px 0 0 0;
 		// text-align: center;
 		h1 {
 			display: inline-block;
 			width: 100%;
 		}
 
-		.image {
-			aspect-ratio: 16/9;
+		time {
+			font-family: variables.$second-font;
+			font-size: clamp(25px, 3vw, 30px);
+			font-weight: 400;
+			line-height: 1.5em;
+			color: variables.$blue;
+		}
+
+		.image-container {
+			padding: clamp(15px, 1.5vw, 25px);
+			background: variables.$dark;
+			border-radius: variables.$border-radius-large;
+			.image {
+				aspect-ratio: 16/9;
+				border-radius: variables.$border-radius;
+				overflow: hidden;
+			}
 		}
 	}
 }

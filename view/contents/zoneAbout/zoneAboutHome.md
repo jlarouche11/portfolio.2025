@@ -1,7 +1,7 @@
 ---
 imageLink: ressources/images/test/image-placeholder.png
 imageAlt: Alt text
-btnLink: '#'
+btnLink: '/ressources/files/CVJadeLarouche.pdf'
 btnLabel: Consulter mon CV
 btnIcon: icon-download
 btnColor: btn-yellow
