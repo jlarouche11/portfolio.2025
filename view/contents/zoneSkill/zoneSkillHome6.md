@@ -1,9 +1,9 @@
 ---
 zoneSize: col-lg-4
-title: Compétence 6
-subtitle: Sur-titre pertinent
-text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-image: ressources/images/test/logoipsum-icon.svg
+title: Vue.js
+subtitle: Framework
+text: Dans le cadre de la création de page web et d'applications web.
+image: /ressources/images/icons/vuejs.svg
 tags: zoneSkillHome
 permalink: false
 ---

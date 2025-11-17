@@ -1,9 +1,9 @@
 ---
 zoneSize: col-lg-4
-title: Compétence 5
-subtitle: Sur-titre pertinent
-text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-image: ressources/images/test/logoipsum-icon.svg
+title: Laravel
+subtitle: Framework
+text: Dans le cadre de la création d'applications web.
+image: /ressources/images/icons/laravel.svg
 tags: zoneSkillHome
 permalink: false
 ---

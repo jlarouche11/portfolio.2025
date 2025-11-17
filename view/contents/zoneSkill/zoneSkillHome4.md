@@ -1,9 +1,9 @@
 ---
 zoneSize: col-lg-4
-title: Compétence 4
-subtitle: Sur-titre pertinent
-text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-image: ressources/images/test/logoipsum-icon.svg
+title: PHP
+subtitle: Langage
+text:
+image: /ressources/images/icons/php.svg
 tags: zoneSkillHome
 permalink: false
 ---

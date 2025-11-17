@@ -1,9 +1,9 @@
 ---
 zoneSize: col-lg-4
-icon: icon-crown
+icon: icon-magnifier
 iconColor: pink
-title: Valeur / force / qualité 3
-text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+title: Souci du détail
+text: En format bureau ou mobile, il faut donner la meilleure expérience utilisateur. Je prends le temps de faire un contrôle qualité avancé pour attraper le plus de bugs possible.
 tags: zoneValueHome
 permalink: false
 ---

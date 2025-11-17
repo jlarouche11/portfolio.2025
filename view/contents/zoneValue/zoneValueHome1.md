@@ -1,9 +1,9 @@
 ---
 zoneSize: col-lg-4
-icon: icon-crown
+icon: icon-communication
 iconColor: yellow
-title: Valeur / force / qualité 1
-text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+title: Communication en équipe
+text: Communiquer avec une équipe n'est pas un problème pour moi! Je tiens à faire des communications claires et détaillées.
 tags: zoneValueHome
 permalink: false
 ---

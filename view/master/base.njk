@@ -5,7 +5,6 @@ email: jlaroucheweb@gmail.com
 github: https://github.com/jlarouche11
 linkedin: #
 ---
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,6 +12,21 @@ linkedin: #
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{{ title }} | {{ defaultTitle }}</title>
 
+	<link rel="apple-touch-icon" sizes="57x57" href="/ressources/images/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/ressources/images/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/ressources/images/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/ressources/images/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/ressources/images/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/ressources/images/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/ressources/images/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/ressources/images/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/ressources/images/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/ressources/images/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/ressources/images/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/ressources/images/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/ressources/images/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/ressources/images/favicon/manifest.json">
+	<meta name="msapplication-TileImage" content="/ressources/images/favicon/ms-icon-144x144.png">
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="theme-color" content="#ffffff">
 
@@ -32,7 +46,7 @@ linkedin: #
 							</a>
 						</div>
 					</div>
-					<div class="col col-auto d-none d-lg-block">
+					{# <div class="col col-auto d-none d-lg-block">
 						<nav>
 							<ul>
 								<li class="submenu"><a>Mes réalisations <i class="icon-chevron-down"></i></a>
@@ -44,13 +58,13 @@ linkedin: #
 								</li>
 							</ul>
 						</nav>
-					</div>
+					</div> #}
 					<div class="col-auto d-none d-lg-block">
 						<div class="btns-group d-flex align-items-center">
 							{# <a href="tel:#" class="btn btn-icon btn-yellow"><i class="icon-phone"></i></a> #}
 							<a href="mailto:{{ email }}" class="btn btn-icon btn-pink"><i class="icon-mail"></i></a>
 							<a href="{{ github }}" target="_blank" class="btn btn-icon btn-github"><i class="icon-github"></i></a>
-							<a href="{{ linkedin }}" target="_blank" class="btn btn-icon btn-linkedin"><i class="icon-linkedin"></i></a>
+							{# <a href="{{ linkedin }}" target="_blank" class="btn btn-icon btn-linkedin"><i class="icon-linkedin"></i></a> #}
 						</div>
 					</div>
 					<div class="col-auto d-lg-none">
@@ -69,20 +83,20 @@ linkedin: #
 			<nav>
 				<ul>
 					<li><a href="/index.html">Accueil</a></li>
-					<li class="submenu">
+					{# <li class="submenu">
 						<a class="colapse-link collapsed" data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse">Mes réalisations <i class="icon-chevron-down"></i></a>
 						<ul class="collapse" id="collapse1">
 							{% for project in collections.projects | reverse %}
 								<li><a href="{{ project.url }}">{{ project.data.title }}</a></li>
 							{% endfor %}
 						</ul>
-					</li>
+					</li> #}
 					<li class="btns">
 						<div class="btns-group d-flex align-items-center justify-content-center">
 							{# <a href="tel:#" class="btn btn-icon btn-yellow"><i class="icon-phone"></i></a> #}
 							<a href="mailto:{{ email }}" class="btn btn-icon btn-pink"><i class="icon-mail"></i></a>
 							<a href="{{ github }}" target="_blank" class="btn btn-icon btn-github"><i class="icon-github"></i></a>
-							<a href="{{ linkedin }}" target="_blank" class="btn btn-icon btn-linkedin"><i class="icon-linkedin"></i></a>
+							{# <a href="{{ linkedin }}" target="_blank" class="btn btn-icon btn-linkedin"><i class="icon-linkedin"></i></a> #}
 						</div>
 					</li>
 				</ul>
@@ -98,8 +112,8 @@ linkedin: #
 						<h2 class="text-center mb-5" data-aos="fade-up" data-aos-duration="700">Pour me contacter</h2>
 						<div class="buttons-grid">
 							<a href="mailto:{{ email }}" class="btn btn-pink btn-email take-entire-column">{{ email }} <div class="block-icon"><i class="icon-mail"></i></div></a>
-							<a href="{{ github }}" target="_blank" class="btn btn-github">Github <div class="block-icon"><i class="icon-github"></i></div></a>
-							<a href="{{ linkedin }}" target="_blank" class="btn btn-linkedin">LinkedIn <div class="block-icon"><i class="icon-linkedin"></i></div></a>
+							<a href="{{ github }}" target="_blank" class="btn btn-github take-entire-column">Github <div class="block-icon"><i class="icon-github"></i></div></a>
+							{# <a href="{{ linkedin }}" target="_blank" class="btn btn-linkedin">LinkedIn <div class="block-icon"><i class="icon-linkedin"></i></div></a> #}
 						</div>
 					</div>
 				</div>

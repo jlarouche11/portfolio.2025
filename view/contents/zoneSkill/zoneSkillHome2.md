@@ -1,9 +1,9 @@
 ---
 zoneSize: col-lg-4
-title: Compétence 2
-subtitle: Sur-titre pertinent
-text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-image: ressources/images/test/logoipsum-icon.svg
+title: CSS 3
+subtitle: Langage
+text: Inclus aussi SASS/SCSS, ainsi que les technologies Bootstrap et Tailwind CSS.
+image: /ressources/images/icons/css3.svg
 tags: zoneSkillHome
 permalink: false
 ---

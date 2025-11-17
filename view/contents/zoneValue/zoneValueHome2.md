@@ -1,9 +1,9 @@
 ---
 zoneSize: col-lg-4
-icon: icon-crown
+icon: icon-book
 iconColor: blue
-title: Valeur / force / qualité 2
-text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+title: Toujours prêt à apprendre
+text: Je suis toujours à la recherche de façons de m'améliorer. Lorsque je suis formée, je peux fonctionner de façon indépendante.
 tags: zoneValueHome
 permalink: false
 ---

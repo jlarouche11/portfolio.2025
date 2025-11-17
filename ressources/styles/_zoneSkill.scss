@@ -1,7 +1,13 @@
 .skill-block {
+	display: flex;
+	flex-direction: column;
+
 	.icon {
+		margin-top: auto;
+		padding-top: 50px;
 		img {
 			max-width: 150px;
+			max-height: 150px;
 		}
 	}
 }
