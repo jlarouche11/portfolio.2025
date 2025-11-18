@@ -46,7 +46,7 @@ linkedin: #
 							</a>
 						</div>
 					</div>
-					{# <div class="col col-auto d-none d-lg-block">
+					<div class="col col-auto d-none d-lg-block">
 						<nav>
 							<ul>
 								<li class="submenu"><a>Mes réalisations <i class="icon-chevron-down"></i></a>
@@ -58,7 +58,7 @@ linkedin: #
 								</li>
 							</ul>
 						</nav>
-					</div> #}
+					</div>
 					<div class="col-auto d-none d-lg-block">
 						<div class="btns-group d-flex align-items-center">
 							{# <a href="tel:#" class="btn btn-icon btn-yellow"><i class="icon-phone"></i></a> #}
@@ -83,14 +83,14 @@ linkedin: #
 			<nav>
 				<ul>
 					<li><a href="/index.html">Accueil</a></li>
-					{# <li class="submenu">
+					<li class="submenu">
 						<a class="colapse-link collapsed" data-bs-toggle="collapse" href="#collapse1" role="button" aria-expanded="false" aria-controls="collapse">Mes réalisations <i class="icon-chevron-down"></i></a>
 						<ul class="collapse" id="collapse1">
 							{% for project in collections.projects | reverse %}
 								<li><a href="{{ project.url }}">{{ project.data.title }}</a></li>
 							{% endfor %}
 						</ul>
-					</li> #}
+					</li>
 					<li class="btns">
 						<div class="btns-group d-flex align-items-center justify-content-center">
 							{# <a href="tel:#" class="btn btn-icon btn-yellow"><i class="icon-phone"></i></a> #}

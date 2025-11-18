@@ -72,15 +72,15 @@ permalink: index.html
 					<h2 class="text-center" data-aos="fade-down" data-aos-duration="700">Mes dernières réalisations</h2>
 				</div>
 
-				{% for project in collections.projects %}
+				{% for project in collections.projectsHome %}
 					{% ZoneProject title=project.data.title, description=project.data.summary, languages=project.data.languages, technologies=project.data.technologies, tasks=project.data.tasks, librairies=project.data.libraries, url=project.url, link=project.data.link, btnColor=project.data.btnColor, image=project.data.mainImage %}
 				{% endfor %}
 
-				{# <div class="col-12 block-col mt-5">
+				<div class="col-12 block-col mt-5">
 					<div class="btns-group justify-content-center">
 						<a href="/realisations.html" class="btn btn-yellow">Voir toutes mes réalisations <div class="block-icon"><i class="icon-arrow-right"></i></div></a>
 					</div>
-				</div> #}
+				</div>
 			</div>
 		</div>
 	</section>

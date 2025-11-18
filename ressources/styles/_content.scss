@@ -183,10 +183,10 @@ p {
 			}
 		}
 		.block-icon {
-			align-items: end;
+			align-items: end !important;
 			i {
 				margin-right: 3px;
-				font-size: 65px;
+				font-size: 65px !important;
 			}
 		}
 	}

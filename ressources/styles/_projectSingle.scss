@@ -2,7 +2,7 @@
 
 .project-page {
 	h2.informations-title {
-		font-size: clamp(30px, 4vw, 50px);
+		font-size: clamp(25px, 4vw, 50px);
 		font-weight: 300;
 		line-height: 1.8em;
 	}
@@ -45,9 +45,98 @@
 	.gallery-block {
 		display: grid;
 		grid-template-columns: repeat(6, 1fr);
+		// grid-auto-rows: 100px;
+		grid-gap: 80px;
 
 		.media {
 			position: relative;
+			overflow: hidden;
+
+			aspect-ratio: 16/9;
+			border: 5px solid variables.$dark;
+
+			border-radius: variables.$border-radius;
+
+			transition: transform 0.5s ease;
+
+			grid-column-end: span 2;
+			grid-row-end: span 2;
+
+			&:hover {
+				transform: scale(1.03);
+
+				.play {
+					.icon {
+						transform: scale(1.05);
+					}
+				}
+			}
+
+			&:nth-child(5n + 1),
+			&:nth-child(5n + 2) {
+				grid-column-end: span 3;
+				grid-row-end: span 3;
+			}
+
+			.play {
+				position: absolute;
+				z-index: 3;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				background: rgba(variables.$dark, 0.2);
+
+				pointer-events: none;
+
+				.icon {
+					width: clamp(60px, 5vw, 80px);
+					aspect-ratio: 1;
+					background: variables.$pink;
+					border-radius: variables.$border-radius-full;
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
+					border: 3px solid variables.$dark;
+
+					transition: transform 0.3s ease;
+
+					i {
+						margin-left: 4px;
+						color: variables.$dark;
+						font-size: clamp(20px, 2vw, 30px);
+					}
+				}
+			}
 		}
 	}
+}
+
+@media only screen and (max-width: 1199px), only screen and (max-device-width: 1199px) {
+	.project-page {
+		.gallery-block {
+			grid-gap: 40px;
+		}
+	}
+}
+@media only screen and (max-width: 991px), only screen and (max-device-width: 991px) {
+	.project-page {
+		.gallery-block {
+			grid-template-columns: repeat(1, 1fr);
+
+			.media {
+				grid-column-end: span 1 !important;
+				grid-row-end: span 1 !important;
+			}
+		}
+	}
+}
+@media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
+}
+@media only screen and (max-width: 575px), only screen and (max-device-width: 575px) {
 }

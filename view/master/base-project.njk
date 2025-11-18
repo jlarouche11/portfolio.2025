@@ -30,23 +30,23 @@ layout: base.njk
 	<section class="sect-container light-blue-pink-yellow-gradient-bg border-bottom-radius">
 		<div class="container">
 			<div class="content-row row large-gutters-100">
-				<div class="col-12 col-lg-9 block-col">
+				<div class="col-12 col-lg-9 block-col order-1">
 					<h2 class="informations-title">{{ summary }}</h2>
 				</div>
-				<div class="col-12 block-col">
+				<div class="col-12 block-col order-2">
 					<hr>
 				</div>
-				<div class="col-12 col-lg-8 block-col">
+				<div class="col-12 col-lg-8 block-col order-4 order-lg-3">
 					<div class="no-bg no-box">
 						{{ content | safe }}
 
 						<div class="btns-group align-items-start flex-column">
 							<a href="{{ link }}" class="btn btn-yellow mb-5" target="_blank">Visiter le site internet <div class="block-icon"><i class="icon-arrow-external"></i></div></a>
-							<a href="{{ archivedLink }}" class="btn btn-small btn-light ms-2" target="_blank">Consulter le lien d'archive <i class="icon-archive"></i></a>
+							{# <a href="{{ archivedLink }}" class="btn btn-small btn-light ms-2" target="_blank">Consulter le lien d'archive <i class="icon-archive"></i></a> #}
 						</div>
 					</div>
 				</div>
-				<div class="col-12 col-lg-4 block-col">
+				<div class="col-12 col-lg-4 block-col order-3 order-lg-4">
 					<div class="project-informations-block">
 						{% if languages %}
 							<div class="information">
@@ -92,13 +92,18 @@ layout: base.njk
 						{% for media in gallery %}
 							{% if media.type == 'youtube' %}
 								<div class="media video">
-									<img class="img-bg fit-cover position-center" src="https://i3.ytimg.com/vi/{{ media.source }}/maxresdefault.jpg" alt="" />
+									<div class="play">
+										<div class="icon">
+											<i class="icon-play"></i>
+										</div>
+									</div>
+									<img class="img-bg fit-cover position-center" src="https://i3.ytimg.com/vi/{{ media.source }}/maxresdefault.jpg" alt="{{ media.alt }}" />
 									<a href="https://www.youtube.com/embed/{{ media.source }}" data-featherlight="iframe" data-featherlight-variant="featherlight-video" class="gallery-link link-overflow flGallery"></a>
 								</div>
 							{% else %}
 								<div class="media image">
 									<a href="{{ media.source }}" data-featherlight="{{ media.source }}" class="link-overflow flGallery"></a>
-									<img class="img-bg fit-cover position-center" src="{{ media.source }}" alt="" />
+									<img class="img-bg fit-cover position-center" src="{{ media.source }}" alt="{{ media.alt }}" />
 								</div>
 							{% endif %}
 						{% endfor %}

@@ -50,12 +50,13 @@ export default function ZoneProject({ title, description, languages, technologie
 			<div class="latest-project-block d-flex flex-column flex-xl-row default-bg border-box">
 				<div class="contents order-2 order-xl-1">
 					<h3 style="view-transition-name: project-${slugify(title)}-title;">${title}</h3>
+					${descriptionContent}
 					${languagesContent}
 					${technologiesContent}
 					${tasksContent}
 					${librairiesContent}
 					<div class="btns-group">
-						<a href="${link}" target="_blank" class="btn ${btnColor}">Voir le site internet <div class="block-icon"><i class="icon-arrow-right"></i></div></a>
+						<a href="${url}" class="btn ${btnColor}">Découvrez le projet <div class="block-icon"><i class="icon-arrow-right"></i></div></a>
 					</div>
 				</div>
 				<div class="image position-relative order-1 order-xl-2">
